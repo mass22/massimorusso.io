@@ -25,6 +25,7 @@
     "better-sqlite3": "^12.4.1",
     "motion-v": "^1.7.1",
     "nuxt": "^4.1.2",
+    "nuxt-mcp": "^0.2.4",
     "nuxt-og-image": "^5.1.11"
   },
   "devDependencies": {
