@@ -1,10 +1,47 @@
 {
-    "welcome": "Welcome",
+    "welcome": "Welcome to my website",
+    "description": "Passionate developer, I share my knowledge and experiences through this blog.",
+    "about": {
+        "title": "About me",
+        "description": "Passionate about modern web development, I create exceptional digital experiences with the latest technologies.",
+        "skills": "Skills",
+        "experience": "Experience",
+        "experience_description": "Over 5 years of experience in modern web development.",
+        "passion": "Passion",
+        "passion_description": "Passionate about innovation and new technologies."
+    },
+    "blog": {
+        "title": "Blog",
+        "latest": "Latest articles",
+        "description": "Discover my latest articles on web development, modern frameworks and best practices.",
+        "view_all": "View all articles",
+        "read_more": "Read more",
+        "back_to_home": "Back to home",
+        "no_posts": "No articles found"
+    },
+    "contact": {
+        "description": "Feel free to contact me to discuss your projects.",
+        "send_message": "Send a message",
+        "info": "Contact information",
+        "social": "Social networks",
+        "send": "Send",
+        "success": "Message sent",
+        "success_message": "Your message has been sent successfully.",
+        "error": "Error",
+        "error_message": "An error occurred while sending the message."
+    },
+    "language": {
+        "title": "Choose language"
+    },
+    "footer": {
+        "copyright": "All rights reserved"
+    },
     "hello": "Hello",
     "goodbye": "Goodbye",
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "language": "Language",
-    "switch_language": "Switch language"
+    "switch_language": "Switch language",
+    "page_not_found": "Page not found",
+    "page_content_not_exists": "The content of this page does not exist."
 }

@@ -8,7 +8,7 @@
           <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
               <h1 class="text-xl font-semibold text-gray-900">
-                {{ t('welcome') }}
+                {{ $t('welcome') }}
               </h1>
             </div>
             <div class="flex items-center space-x-4">
@@ -19,8 +19,6 @@
               >
                 {{ currentLocale === 'fr' ? '🇫🇷 FR' : '🇬🇧 EN' }}
               </button>
-              <!-- Debug: afficher la locale actuelle -->
-              <span class="text-sm text-gray-500">Locale: {{ currentLocale }}</span>
             </div>
           </div>
         </div>
@@ -32,23 +30,15 @@
           <div class="border-4 border-dashed border-gray-200 rounded-lg p-8">
             <div class="text-center">
               <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                {{ t('hello') }} !
+                {{ $t('hello') }} !
               </h2>
               <p class="text-lg text-gray-600 mb-6">
-                {{ t('welcome') }} sur votre application Nuxt avec i18n
+                {{ $t('welcome') }} sur votre application Nuxt avec i18n
               </p>
               <div class="space-y-2">
-                <p><strong>{{ t('home') }}:</strong> {{ t('welcome') }}</p>
-                <p><strong>{{ t('about') }}:</strong> {{ t('hello') }}</p>
-                <p><strong>{{ t('contact') }}:</strong> {{ t('goodbye') }}</p>
-              </div>
-              <!-- Debug: afficher toutes les traductions -->
-              <div class="mt-4 p-4 bg-gray-100 rounded">
-                <h3 class="font-bold mb-2">Debug - Traductions actuelles:</h3>
-                <p>Locale: {{ locale }}</p>
-                <p>Welcome: {{ t('welcome') }}</p>
-                <p>Hello: {{ t('hello') }}</p>
-                <p>URL actuelle: {{ $route.path }}</p>
+                <p><strong>{{ $t('home') }}:</strong> {{ $t('welcome') }}</p>
+                <p><strong>{{ $t('about') }}:</strong> {{ $t('hello') }}</p>
+                <p><strong>{{ $t('contact') }}:</strong> {{ $t('goodbye') }}</p>
               </div>
             </div>
           </div>
@@ -59,7 +49,7 @@
 </template>
 
 <script setup>
-// Utiliser le composable useI18n
+// Utiliser le composable useI18n de Nuxt
 const { locale } = useI18n()
 const route = useRoute()
 const router = useRouter()
@@ -76,32 +66,5 @@ const toggleLanguage = () => {
   } else {
     router.push('/')
   }
-}
-
-// Traductions manuelles
-const translations = {
-  fr: {
-    welcome: 'Bienvenue',
-    hello: 'Bonjour',
-    goodbye: 'Au revoir',
-    home: 'Accueil',
-    about: 'À propos',
-    contact: 'Contact',
-    language: 'Langue'
-  },
-  en: {
-    welcome: 'Welcome',
-    hello: 'Hello',
-    goodbye: 'Goodbye',
-    home: 'Home',
-    about: 'About',
-    contact: 'Contact',
-    language: 'Language'
-  }
-}
-
-// Fonction de traduction personnalisée
-const t = (key) => {
-  return translations[currentLocale.value]?.[key] || key
 }
 </script>

@@ -1,10 +1,47 @@
 {
-    "welcome": "Bienvenue",
+    "welcome": "Bienvenue sur mon site",
+    "description": "Développeur passionné, je partage mes connaissances et expériences à travers ce blog.",
+    "about": {
+        "title": "À propos de moi",
+        "description": "Passionné par le développement web moderne, je crée des expériences numériques exceptionnelles avec les dernières technologies.",
+        "skills": "Compétences",
+        "experience": "Expérience",
+        "experience_description": "Plus de 5 ans d'expérience dans le développement web moderne.",
+        "passion": "Passion",
+        "passion_description": "Passionné par l'innovation et les nouvelles technologies."
+    },
+    "blog": {
+        "title": "Blog",
+        "latest": "Derniers articles",
+        "description": "Découvrez mes derniers articles sur le développement web, les frameworks modernes et les bonnes pratiques.",
+        "view_all": "Voir tous les articles",
+        "read_more": "Lire la suite",
+        "back_to_home": "Retour à l'accueil",
+        "no_posts": "Aucun article trouvé"
+    },
+    "contact": {
+        "description": "N'hésitez pas à me contacter pour discuter de vos projets.",
+        "send_message": "Envoyer un message",
+        "info": "Informations de contact",
+        "social": "Réseaux sociaux",
+        "send": "Envoyer",
+        "success": "Message envoyé",
+        "success_message": "Votre message a été envoyé avec succès.",
+        "error": "Erreur",
+        "error_message": "Une erreur est survenue lors de l'envoi du message."
+    },
+    "language": {
+        "title": "Choisir la langue"
+    },
+    "footer": {
+        "copyright": "Tous droits réservés"
+    },
     "hello": "Bonjour",
     "goodbye": "Au revoir",
     "home": "Accueil",
     "about": "À propos",
     "contact": "Contact",
-    "language": "Langue",
-    "switch_language": "Changer de langue"
+    "switch_language": "Changer de langue",
+    "page_not_found": "Page non trouvée",
+    "page_content_not_exists": "Le contenu de cette page n'existe pas."
 }
