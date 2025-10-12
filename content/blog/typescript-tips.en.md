@@ -2,10 +2,15 @@
 title: "TypeScript Tips for Vue 3"
 description: "Discover TypeScript best practices to improve your Vue 3 development."
 date: "2024-01-05"
+slug: "typescript-tips"
 category:
   name: "TypeScript"
   color: "purple"
-tags: ["typescript", "vue", "types", "development"]
+tags:
+  - "typescript"
+  - "vue"
+  - "types"
+  - "development"
 image: "/images/typescript-vue.jpg"
 ---
 

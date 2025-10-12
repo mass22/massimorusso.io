@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <Header />
 
     <main>
@@ -8,15 +8,15 @@
 
     <UFooter>
       <template #left>
-        <p class="text-sm text-gray-500">
-          © 2024 {{ $t('footer.copyright') }}
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          © {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}
         </p>
       </template>
 
       <template #right>
         <div class="flex items-center space-x-4">
           <UButton
-            to="/"
+            :to="homeUrl"
             color="gray"
             variant="ghost"
             size="sm"
@@ -24,20 +24,20 @@
             {{ $t('home') }}
           </UButton>
           <UButton
-            to="/about"
+            :to="aboutUrl"
             color="gray"
             variant="ghost"
             size="sm"
           >
-            {{ $t('about') }}
+            {{ $t('about.title') || 'À propos' }}
           </UButton>
           <UButton
-            to="/contact"
+            :to="contactUrl"
             color="gray"
             variant="ghost"
             size="sm"
           >
-            {{ $t('contact') }}
+            {{ $t('contact.title') || 'Contact' }}
           </UButton>
         </div>
       </template>
@@ -46,5 +46,5 @@
 </template>
 
 <script setup>
-// Layout par défaut avec header et footer
+const { homeUrl, aboutUrl, contactUrl } = useLocalizedRoute()
 </script>

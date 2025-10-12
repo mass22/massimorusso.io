@@ -1,0 +1,15 @@
+rules:
+  - match: "**/*.vue"
+    assistant_instructions: |
+      Tu travailles sur un projet Nuxt 4 avec TypeScript et Tailwind.
+      Suis les conventions Nuxt (useAsyncData, composables, etc.).
+      Évite le code mort, les console.log, et commente brièvement les fonctions clés.
+      Utilise @nuxt/ui pour les composants visuels.
+  - match: "**/*.ts"
+    assistant_instructions: |
+      Code en TypeScript strict.
+      Préfère les types explicites aux any.
+      Documente les fonctions exportées avec JSDoc succinct.
+  - match: "package.json"
+    assistant_instructions: |
+      Optimise les scripts npm et garde les dépendances propres.

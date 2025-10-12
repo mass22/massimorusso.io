@@ -2,10 +2,15 @@
 title: "Mon premier article sur Nuxt 4"
 description: "Découvrez les nouvelles fonctionnalités de Nuxt 4 et comment migrer votre projet existant."
 date: "2024-01-15"
+slug: "premier-article"
 category:
   name: "Nuxt"
   color: "blue"
-tags: ["nuxt", "vue", "javascript", "migration"]
+tags:
+  - "nuxt"
+  - "vue"
+  - "javascript"
+  - "migration"
 image: "/images/nuxt-4.jpg"
 ---
 

@@ -1,30 +1,50 @@
 <template>
-  <UForm
-    :schema="schema"
-    :state="state"
-    class="space-y-4"
-    @submit="onSubmit"
-  >
-    <UFormGroup label="Nom" name="name">
-      <UInput v-model="state.name" />
-    </UFormGroup>
-
-    <UFormGroup label="Email" name="email">
-      <UInput v-model="state.email" type="email" />
-    </UFormGroup>
-
-    <UFormGroup label="Message" name="message">
-      <UTextarea v-model="state.message" />
-    </UFormGroup>
-
-    <UButton
-      type="submit"
-      :loading="pending"
-      :disabled="pending"
+  <ClientOnly>
+    <UForm
+      :schema="schema"
+      :state="state"
+      class="space-y-4"
+      @submit="onSubmit"
     >
-      {{ $t('contact.send') }}
-    </UButton>
-  </UForm>
+      <UFormField label="Nom" name="name">
+        <UInput v-model="state.name" />
+      </UFormField>
+
+      <UFormField label="Email" name="email">
+        <UInput v-model="state.email" type="email" />
+      </UFormField>
+
+      <UFormField label="Message" name="message">
+        <UTextarea v-model="state.message" />
+      </UFormField>
+
+      <UButton
+        type="submit"
+        :loading="pending"
+        :disabled="pending"
+      >
+        {{ $t('contact.send') }}
+      </UButton>
+    </UForm>
+
+    <template #fallback>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom</label>
+          <div class="h-10 bg-gray-100 dark:bg-gray-800 rounded-md animate-pulse"></div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+          <div class="h-10 bg-gray-100 dark:bg-gray-800 rounded-md animate-pulse"></div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+          <div class="h-24 bg-gray-100 dark:bg-gray-800 rounded-md animate-pulse"></div>
+        </div>
+        <div class="h-10 bg-gray-100 dark:bg-gray-800 rounded-md animate-pulse w-24"></div>
+      </div>
+    </template>
+  </ClientOnly>
 </template>
 
 <script setup>

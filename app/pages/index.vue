@@ -2,10 +2,10 @@
   <div>
     <UContainer>
       <div class="text-center py-12">
-        <h1 class="text-4xl font-bold text-gray-900 mb-6">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
           {{ $t('welcome') }}
         </h1>
-        <p class="text-xl text-gray-600 mb-8">
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
           {{ $t('description') }}
         </p>
 
@@ -23,15 +23,15 @@
             variant="outline"
             size="lg"
           >
-            {{ $t('about') }}
+            {{ $t('about.title') }}
           </UButton>
         </div>
       </div>
     </UContainer>
 
     <!-- Section blog récent -->
-    <UContainer v-if="posts.length > 0" class="py-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">
+    <UContainer v-if="posts && posts.length > 0" class="py-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
         {{ $t('blog.latest') }}
       </h2>
 
@@ -58,10 +58,14 @@
 
 <script setup>
 // Récupérer les articles de blog
-const { data: posts } = await queryContent('blog')
-  .sort({ date: -1 })
-  .limit(3)
-  .find()
+const { data: posts } = await useAsyncData('posts', () => {
+  return queryContent('blog')
+    .sort({ date: -1 })
+    .limit(3)
+    .find()
+}, {
+  default: () => []
+})
 
 // Meta tags
 useHead({

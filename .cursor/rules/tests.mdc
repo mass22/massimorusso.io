@@ -1,0 +1,11 @@
+---
+title: "Tests"
+when: on_file_match
+files:
+  - "**/*.spec.ts"
+alwaysApply: true
+---
+
+Tests avec **Vitest** + **vue/test-utils** :
+- Pas de snapshot inutile.
+- Un test = une intention claire.

@@ -2,10 +2,15 @@
 title: "Maîtriser les Composables Vue 3"
 description: "Apprenez à créer et utiliser efficacement les composables dans vos applications Vue 3."
 date: "2024-01-10"
+slug: "vue-composables"
 category:
   name: "Vue"
   color: "green"
-tags: ["vue", "composables", "composition-api", "javascript"]
+tags:
+  - "vue"
+  - "composables"
+  - "composition-api"
+  - "javascript"
 image: "/images/vue-composables.jpg"
 ---
 

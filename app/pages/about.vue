@@ -2,17 +2,17 @@
   <UContainer>
     <div class="py-12">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold text-gray-900 mb-6">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
           {{ $t('about.title') }}
         </h1>
 
         <div class="prose prose-lg max-w-none">
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
             {{ $t('about.description') }}
           </p>
 
-          <div class="bg-blue-50 p-6 rounded-lg mb-8">
-            <h2 class="text-xl font-semibold text-blue-900 mb-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
+            <h2 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">
               {{ $t('about.skills') }}
             </h2>
             <div class="flex flex-wrap gap-2">

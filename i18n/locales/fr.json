@@ -17,9 +17,13 @@
         "view_all": "Voir tous les articles",
         "read_more": "Lire la suite",
         "back_to_home": "Retour à l'accueil",
-        "no_posts": "Aucun article trouvé"
+        "back_to_list": "Retour à la liste",
+        "related_posts": "Articles similaires",
+        "no_posts": "Aucun article trouvé",
+        "all": "Tous"
     },
     "contact": {
+        "title": "Contact",
         "description": "N'hésitez pas à me contacter pour discuter de vos projets.",
         "send_message": "Envoyer un message",
         "info": "Informations de contact",
@@ -36,11 +40,12 @@
     "footer": {
         "copyright": "Tous droits réservés"
     },
+    "nav": {
+        "home": "Accueil"
+    },
     "hello": "Bonjour",
     "goodbye": "Au revoir",
     "home": "Accueil",
-    "about": "À propos",
-    "contact": "Contact",
     "switch_language": "Changer de langue",
     "page_not_found": "Page non trouvée",
     "page_content_not_exists": "Le contenu de cette page n'existe pas."

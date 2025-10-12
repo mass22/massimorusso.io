@@ -10,34 +10,45 @@ export default defineNuxtConfig({
     'nuxt-mcp',
     '@nuxtjs/i18n'
   ],
+  css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
-  i18n: {
-    locales: [
-      { code: 'fr', language: 'fr-FR' },
-      { code: 'en', language: 'en-US' }
-    ],
-    defaultLocale: 'fr',
-    strategy: 'prefix_except_default',
-    messages: {
-      fr: {
-        welcome: 'Bienvenue',
-        hello: 'Bonjour',
-        goodbye: 'Au revoir',
-        home: 'Accueil',
-        about: 'À propos',
-        contact: 'Contact',
-        language: 'Langue'
-      },
-      en: {
-        welcome: 'Welcome',
-        hello: 'Hello',
-        goodbye: 'Goodbye',
-        home: 'Home',
-        about: 'About',
-        contact: 'Contact',
-        language: 'Language'
+  experimental: {
+    payloadExtraction: false
+  },
+  router: {
+    options: {
+      strict: false
+    }
+  },
+  ui: {
+    colorMode: true,
+    fonts: true,
+    theme: {
+      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error'],
+      transitions: true,
+      defaultVariants: {
+        color: 'primary',
+        size: 'md'
       }
     }
+  },
+  i18n: {
+    strategy: 'prefix_except_default', // / (fr) et /en/...
+    defaultLocale: 'fr',
+    langDir: 'locales',
+    locales: [
+      { code: 'fr', language: 'fr-CA', name: 'Français', files: ['fr.json'] },
+      { code: 'en', language: 'en-US', name: 'English',  files: ['en.json'] }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      redirectOn: 'root',
+      fallbackLocale: 'fr'
+    },
+    compilation: { strictMessage: false }
+  },
+  content: {
+    // rien à forcer ici : on filtre par _locale côté requêtes
   }
 })

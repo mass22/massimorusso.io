@@ -1,0 +1,14 @@
+---
+title: "Frontend Nuxt rules"
+when: always
+alwaysApply: true
+---
+
+Tu travailles sur un projet **Nuxt 4 avec TypeScript strict et @nuxt/ui**.
+Objectifs : clarté, maintenabilité, performance.
+
+- Utilise les conventions Nuxt (useAsyncData, definePageMeta, composables).
+- Utilise @nuxt/ui pour les boutons, cartes, formulaires, modales, etc.
+- Préfère les composants réutilisables aux duplications inline.
+- Pas de CSS custom inutile : privilégie les classes Tailwind existantes.
+- Explique brièvement ta logique quand tu modifies plusieurs fichiers.

@@ -2,7 +2,7 @@
   <UHeader>
     <template #left>
       <UButton
-        to="/"
+        :to="homeUrl"
         color="gray"
         variant="ghost"
         icon="i-heroicons-home"
@@ -17,5 +17,5 @@
 </template>
 
 <script setup>
-// Le composant LanguageSwitcher sera auto-importé
+const { homeUrl } = useLocalizedRoute()
 </script>

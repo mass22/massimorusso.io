@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Styles pour le contenu des articles */
+.article-content {
+  @apply text-gray-900 dark:text-gray-100 leading-relaxed;
+}
+
+.article-content h1 {
+  @apply text-3xl font-bold text-gray-900 dark:text-gray-100 mt-8 mb-4;
+}
+
+.article-content h2 {
+  @apply text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3;
+}
+
+.article-content h3 {
+  @apply text-xl font-semibold text-gray-800 dark:text-gray-200 mt-5 mb-2;
+}
+
+.article-content h4 {
+  @apply text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-2;
+}
+
+.article-content p {
+  @apply mb-4 text-gray-700 dark:text-gray-300;
+}
+
+.article-content ul {
+  @apply mb-4 ml-6;
+}
+
+.article-content ol {
+  @apply mb-4 ml-6;
+}
+
+.article-content li {
+  @apply mb-2 text-gray-700 dark:text-gray-300;
+}
+
+.article-content ul li {
+  @apply list-disc;
+}
+
+.article-content ol li {
+  @apply list-decimal;
+}
+
+.article-content a {
+  @apply text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline;
+}
+
+.article-content strong {
+  @apply font-semibold text-gray-900 dark:text-gray-100;
+}
+
+.article-content em {
+  @apply italic;
+}
+
+.article-content code {
+  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-sm font-mono;
+}
+
+.article-content pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.article-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 mb-4;
+}
+
+.article-content hr {
+  @apply border-gray-300 dark:border-gray-600 my-8;
+}
