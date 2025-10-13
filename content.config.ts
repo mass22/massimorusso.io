@@ -1,5 +1,5 @@
 // content.config.ts
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const blog = defineCollection({
   type: 'page',
@@ -16,8 +16,14 @@ const blog = defineCollection({
   })
 })
 
+const pages = defineCollection({
+  type: 'page',
+  // tout le reste du dossier content
+  source: '**/*.{md,mdc}'
+})
+
 export default defineContentConfig({
   // 👉 ceci demande au moteur d’indexer la locale (via suffixes .fr.md/.en.md)
   i18n: { locales: ['fr', 'en'], defaultLocale: 'fr' },
-  collections: { blog }
+  collections: { blog, pages }
 })
