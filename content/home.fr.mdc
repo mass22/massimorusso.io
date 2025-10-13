@@ -1,0 +1,22 @@
+---
+title: "Accueil"
+description: "Bienvenue sur notre site"
+hero:
+  title: "Bienvenue"
+  subtitle: "Le futur du web commence ici"
+  image: "https://picsum.photos/200/300"
+features:
+  - title: "Rapide"
+    description: "Optimisé pour la performance"
+  - title: "Modulaire"
+    description: "Composants réutilisables"
+  - title: "Multilingue"
+    description: "FR / EN avec .mdc"
+---
+
+
+## À propos
+MDC te permet d’utiliser des **composants Vue** directement dans le Markdown.
+
+## Contact
+Passe par la page **Contact**.

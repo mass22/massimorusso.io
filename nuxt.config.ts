@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: 'app',
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -8,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/ui',
     'nuxt-mcp',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt'
   ],
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
@@ -21,18 +23,9 @@ export default defineNuxtConfig({
       strict: false
     }
   },
-  ui: {
-    colorMode: true,
-    fonts: true,
-    theme: {
-      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error'],
-      transitions: true,
-      defaultVariants: {
-        color: 'primary',
-        size: 'md'
-      }
-    }
-  },
+
+  // @nuxtjs/i18n options (typage modulaires parfois non pris en compte par l'analyse TS locale)
+  // @ts-expect-error: propriété 'i18n' ajoutée par le module @nuxtjs/i18n
   i18n: {
     strategy: 'prefix_except_default', // / (fr) et /en/...
     defaultLocale: 'fr',
