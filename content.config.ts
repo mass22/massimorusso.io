@@ -16,6 +16,23 @@ const blog = defineCollection({
   })
 })
 
+const speaking = defineCollection({
+  type: 'page',
+  source: 'speaking/**/*.{md,mdc}',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.union([z.string(), z.date()]).optional(),
+    slug: z.string().optional(),
+    category: z.object({ name: z.string(), color: z.string().optional() }).optional(),
+    type: z.enum(['podcast', 'talk', 'conference', 'video']),
+    tags: z.array(z.string()).optional(),
+    link: z.string().url().optional(),
+    speakers: z.array(z.string()).optional(),
+    draft: z.boolean().optional()
+  })
+})
+
 const pages = defineCollection({
   type: 'page',
   // tout le reste du dossier content
@@ -25,5 +42,5 @@ const pages = defineCollection({
 export default defineContentConfig({
   // 👉 ceci demande au moteur d’indexer la locale (via suffixes .fr.md/.en.md)
   i18n: { locales: ['fr', 'en'], defaultLocale: 'fr' },
-  collections: { blog, pages }
+  collections: { blog, pages, speaking }
 })

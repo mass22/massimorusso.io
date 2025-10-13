@@ -1,0 +1,30 @@
+---
+title: "À propos"
+description: "Qui sommes-nous"
+hero:
+  title: "À propos de nous"
+  subtitle: "Une équipe passionnée"
+  image: "https://picsum.photos/1200/400"
+stats:
+  - label: "Années d'expérience"
+    value: "10+"
+  - label: "Projets"
+    value: "120+"
+  - label: "Clients"
+    value: "60+"
+  - label: "Taux de rétention"
+    value: "95%"
+team:
+  - name: "Alice"
+    role: "CTO"
+  - name: "Bruno"
+    role: "Product Designer"
+  - name: "Camille"
+    role: "Développeur Front"
+---
+
+## Notre histoire
+Nous construisons des produits web performants et maintenables.
+
+## Nos valeurs
+Qualité, transparence, simplicité.

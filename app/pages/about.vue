@@ -1,64 +1,44 @@
+<script setup lang="ts">
+import { useRoute, useSeoMeta } from 'nuxt/app'
+import { computed } from 'vue'
+import { useLocalizedDoc } from '../composables/useLocalizedDoc'
+import { useMdcBlocks } from '../composables/useMdcBlocks'
+
+const { doc, pending } = useLocalizedDoc('/about')
+
+const docForBlocks = computed(() => doc.value as any)
+const { heroData, stats, team, restDoc } = useMdcBlocks(docForBlocks)
+
+useSeoMeta({
+  title: () => doc.value?.title as string | undefined,
+  description: () => doc.value?.description as string | undefined,
+})
+
+const route = useRoute()
+const showDebug = computed(() => Boolean(route.query.debug))
+const docForRender = computed<any>(() => (doc.value as any) || {})
+</script>
+
 <template>
-  <UContainer>
-    <div class="py-12">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-          {{ $t('about.title') }}
-        </h1>
-
-        <div class="prose prose-lg max-w-none">
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            {{ $t('about.description') }}
-          </p>
-
-          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
-            <h2 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">
-              {{ $t('about.skills') }}
-            </h2>
-            <div class="flex flex-wrap gap-2">
-              <UBadge
-                v-for="skill in skills"
-                :key="skill"
-                color="blue"
-                variant="soft"
-              >
-                {{ skill }}
-              </UBadge>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <UCard>
-              <template #header>
-                <h3 class="text-lg font-semibold">{{ $t('about.experience') }}</h3>
-              </template>
-              <p>{{ $t('about.experience_description') }}</p>
-            </UCard>
-
-            <UCard>
-              <template #header>
-                <h3 class="text-lg font-semibold">{{ $t('about.passion') }}</h3>
-              </template>
-              <p>{{ $t('about.passion_description') }}</p>
-            </UCard>
-          </div>
-        </div>
-      </div>
+  <main class="container mx-auto px-4 py-10">
+    <div v-if="pending">
+      <USkeleton class="h-64 w-full mb-10 rounded-2xl" />
     </div>
-  </UContainer>
+
+    <ContentDebug v-if="showDebug" title="Debug About" :doc="docForRender" :extra="{ statsLen: stats.length, teamLen: team.length }" />
+
+    <UAlert v-if="!doc" color="error" variant="soft" title="Contenu introuvable" />
+
+    <template v-if="doc">
+      <Hero v-if="heroData" :title="heroData.title" :subtitle="heroData.subtitle" :image="heroData.image" class="mb-10" />
+
+      <StatsGrid v-if="stats.length" :stats="stats" class="mb-10" />
+      <TeamList v-if="team.length" :members="team" class="mb-10" />
+
+      <ContentRenderer :value="(restDoc as any) || docForRender" />
+    </template>
+  </main>
 </template>
 
-<script setup>
-const skills = [
-  'Vue.js', 'Nuxt.js', 'TypeScript', 'JavaScript',
-  'CSS', 'HTML', 'Node.js', 'Git'
-]
-
-// Meta tags
-useHead({
-  title: 'À propos',
-  meta: [
-    { name: 'description', content: 'Découvrez mon parcours et mes compétences en développement web' }
-  ]
-})
-</script>
+<style scoped>
+</style>
